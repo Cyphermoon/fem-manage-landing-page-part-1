@@ -2,12 +2,12 @@
   --clr-accent-300: hsl(12, 88%, 75%);
   --clr-accent-400: hsl(12, 88%, 59%);
   --clr-accent-500: hsl(12, 88%, 40%);
-  --clr-accent-100: hsl(13, 100%, 96%);
+  --clr-accent-100: hsl(13, 100%, 99%);
 
   --clr-primary-400: hsl(228, 39%, 23%);
 
   --clr-neutral-900: hsl(232, 12%, 13%);
-  --clr-neutral-100: hsl(0 0% 95%);
+  --clr-neutral-100: hsl(0 0% 99%);
 
   --ff-primary: "Be Vietnam Pro", sans-serif;
 
@@ -166,9 +166,11 @@ svg {
 
 .fs-primary-heading {
   font-size: var(--fs-primary-heading);
+  line-height: 1.1;
 }
 .fs-secondary-heading {
   font-size: var(--fs-secondary-heading);
+  line-height: 1.1;
 }
 
 .fs-300 {
@@ -195,6 +197,18 @@ svg {
   gap: 1rem;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
 @media screen and (min-width:50em) {
   .even-columns{
     grid-auto-flow: column;
@@ -204,7 +218,7 @@ svg {
 /* General Styling */
 
 .container{
-  --max-width:1000px;
+  --max-width:1150px;
   --padding:1rem;
   width:min(var(--max-width), 100% - (var(--padding) * 2));
   margin-inline: auto;
@@ -216,7 +230,7 @@ body{
   font-family: var(--ff-body);
 }
 
-button{
+.button{
   font-size:var(--fs-button);
   font-weight:var(--fw-bold);
   border:none;
@@ -229,17 +243,95 @@ button{
   box-shadow:0 1.125em 1em -1em var(--clr-accent-500)
 }
 
-button:is(:hover, :focus-visible){
+.button:is(:hover, :focus-visible){
   background-color: var(--clr-accent-300);
 }
 
-button[data-type="inverted"]{
+.button[data-type="inverted"]{
   color: var(--clr-accent-400);
   background-color: var(--clr-neutral-100);
 }
 
-button[data-type="inverted"]:is(:hover, :focus-visible){
+.button[data-type="inverted"]:is(:hover, :focus-visible){
   color: var(--clr-neutral-100);
   background-color: var(--clr-accent-300);
 }
 
+/* navigation */ 
+.primary-header{
+  margin-top: var(--size-700);
+}
+
+.nav-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-nav-toggle{
+  display: none;
+}
+
+.nav-list{
+  display: flex;
+  gap: clamp(var(--size-100), 3vw, var(--size-700));
+}
+
+.nav-list a{
+  text-decoration: none;
+  color: var(--clr-neutral-900);
+}
+
+.nav-list a:is(:hover, :focus-visible){
+  color: var(--clr-accent-400);
+}
+
+@media screen and (max-width:50em) {
+  .primary-header .get-started{
+    display:none;
+  }
+
+  .primary-navigation{
+    display: none;
+    position: absolute;
+    padding: var(--size-600);
+    inset: 7rem var(--size-300) auto;
+    background-color: var(--clr-neutral-100);
+    border-radius: var(--size-100);
+    box-shadow: 0 0 0.75em rgba(0, 0, 0, .05);
+  }
+
+  .primary-header[data-overlay]::before{
+    content: "";
+    position:fixed;
+    inset:0;
+    background-image: linear-gradient(rgba(0,0,0,.07), rgba(0,0,0,.09), rgba(0,0,0,.15));
+  }
+
+  .nav-list{
+    display: grid;
+    gap: var(--size-600);
+    text-align: center;
+    font-weight: var(--fw-bold);
+  }
+
+  .primary-navigation[data-visible]{
+    display:block;
+  }
+
+  .mobile-nav-toggle{
+    position:absolute;
+    z-index:100;
+    top:var(--size-600);
+    right: var(--size-600);
+    display: block;
+    cursor:pointer;
+    background:transparent;
+    padding: .5em;
+    border:0;
+  }
+  
+  .mobile-nav-toggle .icon-close{
+    display:none;
+  }
+}

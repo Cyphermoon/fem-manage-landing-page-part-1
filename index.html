@@ -13,19 +13,28 @@
 </head>
 
 <body>
-  <header>
+  <header class="primary-header">
     <div class="container">
-      <a href="#"><img src="images/logo.svg" alt="Company Logo"></a>
-      <nav class="primary-navigation">
-        <ul role="list" class="nav-list">
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">Product</a></li>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Community</a></li>
-        </ul>
-      </nav>
-      <button class="button">Get Started</button>
+      <div class="nav-wrapper">
+
+        <a href="#"><img src="images/logo.svg" alt="Company Logo"></a>
+        <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+          <img class="icon-close" src="/images/icon-close.svg" alt="">
+          <img class="icon-hamburger" src="/images/icon-hamburger.svg" alt="">
+          <span class="visually-hidden">menu</span>
+        </button>
+
+        <nav class="primary-navigation" id="primary-navigation">
+          <ul role="list" class="nav-list">
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Community</a></li>
+          </ul>
+        </nav>
+        <button class="button get-started">Get Started</button>
+      </div>
     </div>
   </header>
   <main>
