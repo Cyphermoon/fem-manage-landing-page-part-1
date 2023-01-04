@@ -448,10 +448,17 @@ body{
   --logo-color:var(--clr-neutral-100)
 }
 
+
+
 input:is([type="email"]){
   border:none;
   border-radius: 100vmax;
   padding:.65em 1.85em;
+}
+
+.primary-footer-form form{
+  display: flex;
+  gap: var(--size-400);
 }
 
 .social-links a{
