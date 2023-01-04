@@ -282,6 +282,10 @@ body{
   background-color: var(--clr-accent-300);
 }
 
+.button[data-shadow="none"]{
+  box-shadow: none;
+}
+
 /* navigation */ 
 .primary-header{
   margin-top: var(--size-700);
@@ -369,10 +373,6 @@ body{
   text-align: center;
 }
 
-.cta .button[data-type="inverted"]{
-
-}
-
 .cta::before{
   content:"";
   position:absolute;
@@ -387,6 +387,98 @@ body{
   background-repeat: no-repeat;
 }
 
-@media screen and (min-width:50em){
 
+/* footer */ 
+
+.footer-nav {
+  columns: 2;
+  gap: clamp(var(--size-100), 8vw, var(--size-900));
+}
+
+.primary-footer-wrapper{
+  display: grid;
+  gap: var(--size-700);
+  grid-template-areas: 
+  "form"
+  "nav"
+  "logo-social";
+  justify-content: center;
+  justify-items: center;
+}
+
+@media screen and (min-width: 50em){
+  .primary-footer-wrapper{
+    grid-template-areas:"logo-social nav form";
+    justify-content: space-between;
+    justify-items: stretch;
+  }
+}
+
+.primary-footer-form{
+  grid-area: form;
+
+  display: grid;
+  gap: var(--size-300);
+  align-content: space-between;
+  justify-items: center;
+}
+
+.primary-footer-logo-social{
+  grid-area: logo-social;
+  display:flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items:center;
+  gap: var(--size-700);
+}
+
+@media screen  and (min-width:50em){
+  .primary-footer-logo-social{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+
+.primary-footer-nav{
+  grid-area: nav
+}
+
+.primary-footer .logo{
+  --logo-color:var(--clr-neutral-100)
+}
+
+input:is([type="email"]){
+  border:none;
+  border-radius: 100vmax;
+  padding:.65em 1.85em;
+}
+
+.social-links a{
+  text-decoration: none;
+  color: var(--clr-neutral-100);
+}
+
+.social-links a:is(:hover, :focus){
+  color: var(--clr-accent-400);
+}
+
+.social-icons {
+  display: flex;
+  gap: var(--size-300);
+}
+
+.social-icon{
+  fill:var(--clr-neutral-100);
+  width: var(--size-600);
+  aspect-ratio: 1/1;
+}
+
+@media screen and (min-width:50em){ 
+  .social-icon{
+    width: var(--size-500)
+  }
+}
+.social-icons a:is(:hover, :focus-visible) .social-icon{
+  fill: var(--clr-accent-400);
 }
