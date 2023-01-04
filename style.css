@@ -69,6 +69,15 @@
   font: inherit;
 }
 
+p:not([class]){
+  opacity: .7;
+  max-width: 38ch;
+}
+
+p[data-width="wide"]{
+  max-width: 42ch;
+}
+
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role="list"],
 ol[role="list"] {
@@ -192,6 +201,22 @@ svg {
 .padding-block-700 {
   padding-block: var(--size-700);
 }
+
+.vertical-align-center{
+  align-items: center;
+}
+
+@media screen and (min-width:50em) {
+  .justify-self-end-md{
+  justify-self: end;
+}
+}
+
+
+:where(.flow > :not(:first-child)) {
+  margin-top: var(--flow-spacer, 1.5em);
+}
+
 .even-columns{
   display: grid;
   gap: 1rem;
@@ -334,4 +359,34 @@ body{
   .mobile-nav-toggle .icon-close{
     display:none;
   }
+}
+
+/* cta */
+
+.cta{
+  position:relative;
+  isolation: isolate;
+  text-align: center;
+}
+
+.cta .button[data-type="inverted"]{
+
+}
+
+.cta::before{
+  content:"";
+  position:absolute;
+  z-index: -1;
+  inset:0;
+  background-color:red;
+  opacity: .1;
+  background-image: 
+  url("/images/bg-tablet-pattern.svg"),
+  url("/images/bg-tablet-pattern.svg");
+  background-position: -10em -1em, 80em -40em;
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width:50em){
+
 }
