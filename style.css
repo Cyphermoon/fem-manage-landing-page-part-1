@@ -361,6 +361,11 @@ body {
     display: none;
   }
 
+  .primary-header{
+    position: relative;
+    z-index: 999;
+  }
+
   .primary-navigation {
     display: none;
     position: absolute;
@@ -369,6 +374,8 @@ body {
     background-color: var(--clr-neutral-100);
     border-radius: var(--size-100);
     box-shadow: 0 0 0.75em rgba(0, 0, 0, .05);
+    max-width: 400px;
+    margin-inline: auto;
   }
 
   .primary-header[data-overlay]::before {
