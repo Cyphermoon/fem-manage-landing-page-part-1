@@ -15,11 +15,7 @@ navToggle.addEventListener("click", (e) => {
     primaryHeader.toggleAttribute("data-overlay")
 
 
-    //toggle hamburger icon
-    if (navToggle.getAttribute("aria-expanded") === "true")
-        hamburgerIcon.setAttribute("src", "/images/icon-close.svg")
-    else
-        hamburgerIcon.setAttribute("src", "/images/icon-hamburger.svg")
+
 })
 
 const slider = new A11YSlider(document.querySelector('.slider'), {

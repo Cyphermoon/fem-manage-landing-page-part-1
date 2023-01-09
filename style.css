@@ -408,7 +408,7 @@ body {
   .mobile-nav-toggle {
     position: absolute;
     z-index: 100;
-    top: var(--size-600);
+    /* top: var(--size-500); */
     right: var(--size-600);
     display: block;
     cursor: pointer;
