@@ -459,6 +459,7 @@ body {
   gap: var(--size-600);
 }
 
+
 .a11y-slider-container {
   margin-block: var(--size-700);
   margin-inline: var(--size-400);
