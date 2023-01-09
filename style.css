@@ -438,7 +438,7 @@ body {
   width: 90%;
   max-height: 70vh;
   aspect-ratio: 1 / 1.2;
-  background-image: url("/images/bg-tablet-pattern.svg");
+  background-image: url("/assets/bg-tablet-pattern.svg");
   background-repeat: no-repeat;
   background-position: bottom left;
 }
@@ -599,7 +599,7 @@ body {
 }
 
 .sales_point__blog::before{
-  content: url("/images/bg-tablet-pattern.svg");
+  content: url("/assets/bg-tablet-pattern.svg");
   position: absolute;
   z-index: -1;
   zoom: 30%;
@@ -609,7 +609,7 @@ body {
 
 @media screen and (min-width: 49em){
   .sales_point__blog::before{
-    content: url("/images/bg-tablet-pattern.svg");
+    content: url("/assets/bg-tablet-pattern.svg");
     position: absolute;
     z-index: -1;
     zoom: 60%;
@@ -634,8 +634,8 @@ body {
   background-color: red;
   opacity: .1;
   background-image:
-    url("/images/bg-tablet-pattern.svg"),
-    url("/images/bg-tablet-pattern.svg");
+    url("/assets/bg-tablet-pattern.svg"),
+    url("/assets/bg-tablet-pattern.svg");
   background-position: -10em -1em, 80em -40em;
   background-repeat: no-repeat;
 }
