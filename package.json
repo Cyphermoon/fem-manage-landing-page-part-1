@@ -5,9 +5,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postcss-prefix": "postcss style.css -o bundle.css"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "flex-gap-polyfill": "^4.1.2",
+    "postcss": "^8.4.21",
+    "postcss-preset-env": "^7.8.3",
     "vite": "^2.9.9"
   }
 }
