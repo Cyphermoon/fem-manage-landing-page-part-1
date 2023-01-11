@@ -673,7 +673,7 @@ body {
 }
 
 
-@media screen and (max-width: 32em) {
+@media screen and (max-width: 49em) {
   .primary-footer-logo-social a {
     margin-top: var(--size-700);
   }
@@ -689,6 +689,11 @@ body {
     ;
     justify-content: space-between;
   }
+
+  .footer-nav {
+    min-width:230px
+  }
+  
 
 }
 
