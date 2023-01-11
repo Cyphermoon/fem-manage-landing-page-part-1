@@ -261,13 +261,26 @@ svg {
 }
 
 
-:where(.flow > :not(:first-child)) {
+.flow > * + * {
   margin-top: var(--flow-spacer, 1.5em);
+}
+
+.flow-left > * + * {
+  margin-left: var(--flow-spacer, 1.5em)
 }
 
 .even-columns {
   display: grid;
-  gap: 1rem;
+}
+
+.even-columns > * + * {
+  margin-top: 1em;
+}
+
+@media screen and (min-width: 49em) {
+  .even-columns > * + * {
+    margin-left: 1em;
+  }
 }
 
 .visually-hidden {
@@ -353,7 +366,6 @@ body {
 
 .nav-list {
   display: flex;
-  gap: clamp(var(--size-100), 3vw, var(--size-700));
 }
 
 .nav-list a {
@@ -396,7 +408,6 @@ body {
 
   .nav-list {
     display: grid;
-    gap: var(--size-600);
     text-align: center;
     font-weight: var(--fw-bold);
   }
@@ -456,7 +467,6 @@ body {
 .slider {
   display: flex;
   list-style: none;
-  gap: var(--size-600);
 }
 
 
@@ -474,8 +484,10 @@ body {
 .a11y-slider-dots {
   display: flex;
   justify-content: center;
-  gap: var(--size-300);
   margin-block-start: var(--size-500);
+}
+.a11y-slider-dots > * + * {
+  margin-left: var(--size-300);
 }
 
 .a11y-slider-dots li {
@@ -645,13 +657,11 @@ body {
 
 .footer-nav {
   columns: 2;
-  gap: 5px;
   min-width:200px
 }
 
 .primary-footer-wrapper {
   display: grid;
-  gap: var(--size-800);
   grid-template-areas:
     "form"
     "nav"
@@ -659,6 +669,14 @@ body {
     "copyright";
   justify-content: center;
   justify-items: center;
+  gap: var(--size-700);
+}
+
+
+@media screen and (max-width: 32em) {
+  .primary-footer-logo-social a {
+    margin-top: var(--size-700);
+  }
   
 }
 
@@ -672,9 +690,6 @@ body {
     justify-content: space-between;
   }
 
-  .footer-nav {
-    gap: var(--size-600);
-  }
 }
 
 .primary-footer-form {
@@ -688,8 +703,8 @@ body {
   flex-direction: column-reverse;
   justify-content: space-between;
   align-items: center;
-  gap: var(--size-800);
 }
+
 
 .primary-footer-copyright{
   grid-area: copyright;
@@ -724,7 +739,6 @@ input:is([type="email"]) {
 
 .primary-footer-form form {
   display: flex;
-  gap: var(--size-400);
 }
 
 .social-links a {
@@ -738,12 +752,12 @@ input:is([type="email"]) {
 
 .social-icons {
   display: flex;
-  gap: var(--size-300);
 }
 
 .social-icon {
   fill: var(--clr-neutral-100);
   width: var(--size-600);
+  height: 50px;
   aspect-ratio: 1/1;
 }
 

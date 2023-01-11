@@ -6,7 +6,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "postcss-prefix": "postcss style.css -o bundle.css"
+    "postcss-prefix": "postcss style.css -o bundle.css --watch"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
