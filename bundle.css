@@ -313,12 +313,13 @@ svg {
 }
 
 .even-columns > * + * {
-  margin-top: 1em;
+  margin-top: 1.5rem;
+  margin-top: var(--size-500);
 }
 
 @media screen and (min-width: 49em) {
   .even-columns > * + * {
-    margin-left: 1em;
+    margin-left: 2em;
   }
 }
 
@@ -491,6 +492,16 @@ body {
   display: flex;
 }
 
+@media screen and (max-width: 49em) {
+  .nav-list > * + *{
+    margin-left: 0;
+    margin-left: initial;
+    margin-top: 1rem;
+    margin-top: var(--size-400);
+  }
+}
+
+
 .nav-list a {
   text-decoration: none;
   color: hsl(232, 12%, 13%);
@@ -623,6 +634,11 @@ body {
 @media screen and (min-width: 49em){
   .hero__image::before{
     width: 45%;
+  }
+
+  .nav-list > * + *{
+    margin-left: 1.5rem;
+    margin-left: var(--size-500);
   }
 
 }
