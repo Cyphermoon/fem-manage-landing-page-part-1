@@ -274,7 +274,7 @@ svg {
 }
 
 .even-columns > * + * {
-  margin-top: var(--size-500);
+  margin-top: var(--size-600);
 }
 
 @media screen and (min-width: 49em) {

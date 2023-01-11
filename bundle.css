@@ -313,8 +313,8 @@ svg {
 }
 
 .even-columns > * + * {
-  margin-top: 1.5rem;
-  margin-top: var(--size-500);
+  margin-top: 2rem;
+  margin-top: var(--size-600);
 }
 
 @media screen and (min-width: 49em) {
